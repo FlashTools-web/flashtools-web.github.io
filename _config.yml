@@ -1,0 +1,11 @@
+# Konfiguracja Jekyll dla GitHub Pages
+title: FlashTools
+description: "Kompleksowy zestaw narzędzi: Generator kodów QR, Hasła, DevTools, Edycja PDF i więcej."
+lang: pl
+
+# Pliki, których Jekyll nie publikuje
+exclude:
+  - README.md
+  - tools/
+  - podglad.bat
+  - _preview/

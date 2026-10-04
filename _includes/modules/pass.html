@@ -1,0 +1,28 @@
+<!-- 2. HASŁA -->
+<section id="view-pass" class="tool-view">
+    <div class="tool-header"><h2>🔑 Ochrona Haseł</h2><p>Kryptograficzne generowanie i weryfikacja zxcvbn.</p></div>
+    <div class="flex-row">
+        <div class="flex-1 panel">
+            <h3>Generator</h3><br>
+            <div class="form-group"><label>Długość: <span id="p_lenV">16</span></label><input type="range" id="p_len" min="8" max="64" value="16" oninput="document.getElementById('p_lenV').innerText=this.value; genPass()"></div>
+            <div class="form-group"><label>Ilość haseł:</label><input type="number" id="p_cnt" value="1" min="1" max="20" oninput="genPass()"></div>
+            <div class="flex-row" style="margin-bottom:1.5rem;">
+                <label><input type="checkbox" id="pUp" checked onchange="genPass()"> A-Z</label>
+                <label><input type="checkbox" id="pLo" checked onchange="genPass()"> a-z</label>
+                <label><input type="checkbox" id="pNu" checked onchange="genPass()"> 0-9</label>
+                <label><input type="checkbox" id="pSy" checked onchange="genPass()"> Z.Specjalne</label>
+            </div>
+            <div id="p_out" style="background:rgba(0,0,0,0.3); padding:1.5rem; border-radius:8px; text-align:center; font-family:monospace; font-size:1.5rem; word-break:break-all; margin-bottom:1rem;"></div>
+            <button id="p_copyBtn" class="btn-primary" onclick="copyPassMain()">Skopiuj Hasło</button>
+            <div id="p_ext" style="margin-top:1rem; display:none; max-height:150px; overflow-y:auto; font-family:monospace; font-size:0.9rem;"></div>
+        </div>
+        <div class="flex-1 panel">
+            <h3>Weryfikator (Lokalny)</h3><br>
+            <div class="form-group"><input type="text" id="p_chk" oninput="checkPass()" placeholder="Wklej hasło..." style="text-align:center; font-size:1.2rem; padding:1rem;"></div>
+            <div style="width:100%; height:12px; background:var(--border); border-radius:6px; margin-bottom:1rem;"><div id="p_bar" style="height:100%; width:0%; border-radius:6px; transition:0.3s;"></div></div>
+            <div id="p_txt" style="font-weight:bold; font-size:1.2rem; margin-bottom:0.5rem;">Oczekuję...</div>
+            <div id="p_crk" style="color:var(--text-muted); font-size:0.95rem;"></div>
+            <div id="p_warn" style="color:var(--danger); font-size:0.9rem; margin-top:0.5rem; font-weight:bold;"></div>
+        </div>
+    </div>
+</section>

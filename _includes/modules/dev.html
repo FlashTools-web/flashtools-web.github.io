@@ -1,0 +1,38 @@
+<!-- 5. DEV TOOLS -->
+<section id="view-dev" class="tool-view">
+    <div class="tool-header"><h2>💻 Dev Tools</h2><p>Formatowanie JSON, Base64 i Hashing kryptograficzny.</p></div>
+    <div class="panel">
+        <div class="form-group"><label>Input string / JSON</label><textarea id="d_in" oninput="procDev()"></textarea></div>
+        <div class="flex-row">
+            <div class="flex-1 form-group">
+                <label>MD5 Hash</label>
+                <div style="display:flex; gap:5px;"><input type="text" id="d_md5" readonly><button class="btn-secondary copy-btn" onclick="copyTextToClipboard(document.getElementById('d_md5').value, this)">Kopiuj</button></div>
+            </div>
+            <div class="flex-1 form-group">
+                <label>SHA-256 Hash</label>
+                <div style="display:flex; gap:5px;"><input type="text" id="d_sha" readonly><button class="btn-secondary copy-btn" onclick="copyTextToClipboard(document.getElementById('d_sha').value, this)">Kopiuj</button></div>
+            </div>
+        </div>
+        <div class="flex-row">
+            <div class="flex-1 form-group">
+                <label>Base64 Encode (UTF-8 safe)</label>
+                <div style="display:flex; gap:5px;"><input type="text" id="d_b64e" readonly><button class="btn-secondary copy-btn" onclick="copyTextToClipboard(document.getElementById('d_b64e').value, this)">Kopiuj</button></div>
+            </div>
+            <div class="flex-1 form-group">
+                <label>Base64 Decode</label>
+                <div style="display:flex; gap:5px;"><input type="text" id="d_b64d" readonly><button class="btn-secondary copy-btn" onclick="copyTextToClipboard(document.getElementById('d_b64d').value, this)">Kopiuj</button></div>
+            </div>
+        </div>
+        <div class="form-group" style="margin-top:1rem;">
+            <div class="flex-row" style="justify-content:space-between; margin-bottom:0.5rem;">
+                <label style="margin:0;">Sformatowany JSON (Output)</label> 
+                <div style="display:flex; gap:10px;">
+                    <button class="btn-secondary" style="padding:0.3rem 0.6rem; font-size:0.8rem;" onclick="procDev(false)">Beautify</button>
+                    <button class="btn-secondary" style="padding:0.3rem 0.6rem; font-size:0.8rem;" onclick="procDev(true)">Minify</button>
+                    <button class="btn-primary" style="padding:0.3rem 0.6rem; font-size:0.8rem;" onclick="copyTextToClipboard(document.getElementById('d_json').value, this)">Kopiuj JSON</button>
+                </div>
+            </div>
+            <textarea id="d_json" readonly style="background:rgba(0,0,0,0.4); min-height: 200px; font-family:monospace;"></textarea>
+        </div>
+    </div>
+</section>

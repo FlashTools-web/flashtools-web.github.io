@@ -1,0 +1,119 @@
+<!-- 1. KODY QR -->
+<section id="view-qr" class="tool-view">
+    <div class="tool-header"><h2>🔲 Generator QR & Historia</h2><p>Twórz zaawansowane kody. Historia zapisuje się w pamięci urządzenia.</p></div>
+    <div class="desktop-split">
+        <div class="main-panel panel">
+            <div class="tabs" id="qrTabs">
+                <div class="tab active" data-target="qr-url">URL</div>
+                <div class="tab" data-target="qr-text">Tekst</div>
+                <div class="tab" data-target="qr-wifi">WiFi</div>
+                <div class="tab" data-target="qr-vcard">vCard</div>
+                <div class="tab" data-target="qr-email">Email</div>
+                <div class="tab" data-target="qr-sms">SMS</div>
+                <div class="tab" data-target="qr-phone">Telefon</div>
+                <div class="tab" data-target="qr-geo">Geo</div>
+                <div class="tab" data-target="qr-social">Social</div>
+                <div class="tab" data-target="qr-crypto">Crypto</div>
+                <div class="tab" data-target="qr-event">Event</div>
+            </div>
+            
+            <div id="qr-url" class="tab-content active"><div class="form-group"><label>Adres URL</label><input type="text" id="q_url" value="https://example.com" oninput="updateQR()"></div></div>
+            <div id="qr-text" class="tab-content"><div class="form-group"><label>Wiadomość tekstowa</label><textarea id="q_txt" oninput="updateQR()">Przykładowy tekst</textarea></div></div>
+            <div id="qr-wifi" class="tab-content">
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>Sieć (SSID)</label><input type="text" id="q_ws" oninput="updateQR()"></div>
+                    <div class="form-group flex-1"><label>Hasło</label><input type="text" id="q_wp" oninput="updateQR()"></div>
+                    <div class="form-group flex-1"><label>Typ</label><select id="q_wt" onchange="updateQR()"><option value="WPA">WPA/WPA2</option><option value="WEP">WEP</option><option value="nopass">Brak</option></select></div>
+                </div>
+            </div>
+            <div id="qr-vcard" class="tab-content">
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>Imię i Nazwisko</label><input type="text" id="q_vn" oninput="updateQR()"></div>
+                    <div class="form-group flex-1"><label>Firma</label><input type="text" id="q_vc" oninput="updateQR()"></div>
+                </div>
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>Telefon</label><input type="text" id="q_vp" oninput="updateQR()"></div>
+                    <div class="form-group flex-1"><label>E-mail</label><input type="text" id="q_ve" oninput="updateQR()"></div>
+                </div>
+            </div>
+            <div id="qr-email" class="tab-content">
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>E-mail docelowy</label><input type="text" id="q_em" oninput="updateQR()"></div>
+                    <div class="form-group flex-1"><label>Temat</label><input type="text" id="q_es" oninput="updateQR()"></div>
+                </div>
+            </div>
+            <div id="qr-sms" class="tab-content">
+                <div class="form-group"><label>Numer telefonu</label><input type="text" id="q_sp" oninput="updateQR()"></div>
+                <div class="form-group"><label>Treść SMS</label><textarea id="q_sb" oninput="updateQR()"></textarea></div>
+            </div>
+            <div id="qr-phone" class="tab-content"><div class="form-group"><label>Numer telefonu do wybrania</label><input type="text" id="q_ph" oninput="updateQR()"></div></div>
+            <div id="qr-geo" class="tab-content">
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>Szerokość (Latitude)</label><input type="text" id="q_gl" placeholder="np. 52.229" oninput="updateQR()"></div>
+                    <div class="form-group flex-1"><label>Długość (Longitude)</label><input type="text" id="q_gn" placeholder="np. 21.012" oninput="updateQR()"></div>
+                </div>
+            </div>
+            <div id="qr-social" class="tab-content">
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>Platforma</label>
+                        <select id="q_so_p" onchange="updateQR()">
+                            <option value="https://instagram.com/">Instagram</option>
+                            <option value="https://facebook.com/">Facebook</option>
+                            <option value="https://twitter.com/">X (Twitter)</option>
+                            <option value="https://linkedin.com/in/">LinkedIn</option>
+                            <option value="https://youtube.com/@">YouTube</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex-1"><label>Nazwa użytkownika</label><input type="text" id="q_so_u" oninput="updateQR()"></div>
+                </div>
+            </div>
+            <div id="qr-crypto" class="tab-content">
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>Kryptowaluta</label><select id="q_cr_t" onchange="updateQR()"><option value="bitcoin">Bitcoin (BTC)</option><option value="ethereum">Ethereum (ETH)</option></select></div>
+                    <div class="form-group flex-1"><label>Kwota (Opcjonalnie)</label><input type="text" id="q_cr_m" oninput="updateQR()"></div>
+                </div>
+                <div class="form-group"><label>Adres portfela</label><input type="text" id="q_cr_a" oninput="updateQR()"></div>
+            </div>
+            <div id="qr-event" class="tab-content">
+                <div class="form-group"><label>Nazwa wydarzenia</label><input type="text" id="q_ev_t" oninput="updateQR()"></div>
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>Początek</label><input type="datetime-local" id="q_ev_s" oninput="updateQR()"></div>
+                    <div class="form-group flex-1"><label>Koniec</label><input type="datetime-local" id="q_ev_e" oninput="updateQR()"></div>
+                </div>
+                <div class="form-group"><label>Lokalizacja</label><input type="text" id="q_ev_l" oninput="updateQR()"></div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border); margin-top: 1.5rem; padding-top: 1.5rem;">
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>Własne Logo (wyśrodkowane)</label><input type="file" id="q_logo" accept="image/*" onchange="loadQrLogo(this)" style="padding:0.4rem;"></div>
+                    <div class="form-group flex-1"><label>Szybki Styl</label>
+                        <div class="flex-row" style="gap:5px;">
+                            <button class="btn-secondary" style="flex:1; padding:0.4rem;" onclick="setQrPreset('#000000', '#ffffff', false)">Minimal</button>
+                            <button class="btn-secondary" style="flex:1; padding:0.4rem;" onclick="setQrPreset('#00F5FF', '#0F172A', true)">Neon</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="form-group flex-1"><label>Kolor Kodu</label><input type="color" id="qrFg" value="#00d2ff" onchange="updateQR()" style="width:100%; height:40px; border:none;"></div>
+                    <div class="form-group flex-1"><label>Kolor Tła</label><input type="color" id="qrBg" value="#ffffff" onchange="updateQR()" style="width:100%; height:40px; border:none;"></div>
+                </div>
+                <label style="display:flex; align-items:center; gap:10px; cursor:pointer;"><input type="checkbox" id="qrRounded" onchange="updateQR()" checked> Zaokrąglone krawędzie punktów</label>
+                
+                <div style="margin-top:1rem;"><label>Czytelność (Kontrast) - istotne przy skanowaniu</label><div style="width:100%; height:8px; background:var(--border); border-radius:4px;"><div id="qrReadability" style="height:100%; width:100%; background:var(--success); transition:0.3s;"></div></div></div>
+            </div>
+        </div>
+        
+        <div class="side-panel panel">
+            <div id="qrRender" style="background:#fff; padding:15px; border-radius:12px; margin-bottom:1rem; width:100%; display:flex; justify-content:center; min-height:250px;"></div>
+            <div class="flex-row" style="width:100%; margin-bottom:1.5rem;">
+                <button class="btn-secondary flex-1" onclick="downloadQR('svg')">Pobierz SVG</button>
+                <button class="btn-primary flex-1" onclick="downloadQR('png')">Pobierz PNG</button>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-bottom:0.5rem;">
+                <h3 style="font-size:1rem; color:var(--text-muted);">Historia generowania</h3>
+                <button class="btn-secondary" style="padding:0.2rem 0.6rem; font-size:0.75rem;" onclick="clearQrHist()">Wyczyść</button>
+            </div>
+            <div id="qrHistory" style="width:100%; max-height:250px; overflow-y:auto; font-size:0.85rem; color:var(--text-muted); padding-right:5px; align-self:flex-start;"></div>
+        </div>
+    </div>
+</section>

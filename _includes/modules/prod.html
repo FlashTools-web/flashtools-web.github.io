@@ -1,0 +1,22 @@
+<!-- 8. PRODUKTYWNOŚĆ -->
+<section id="view-prod" class="tool-view">
+    <div class="tool-header"><h2>⏱️ Produktywność</h2><p>Timer Pomodoro i Szybkie Notatki z Auto-zapisem.</p></div>
+    <div class="flex-row">
+        <div class="flex-1 panel" style="text-align:center;">
+            <h3>Pomodoro</h3>
+            <div id="po_t" style="font-size:5rem; font-weight:800; color:var(--accent); font-variant-numeric:tabular-nums; margin:1rem 0;">25:00</div>
+            <div class="flex-row" style="justify-content:center;">
+                <button id="po_b" class="btn-primary" style="width:auto; padding:0.8rem 2.5rem;" onclick="togglePomo()">START</button>
+                <button class="btn-secondary" onclick="resetPomo()">RESET</button>
+            </div>
+        </div>
+        <div class="flex-1 panel">
+            <h3>Szybkie Notatki</h3>
+            <textarea id="po_n" placeholder="Pisz tutaj... Zapisuje się automatycznie." style="height:150px; margin-top:1rem;" oninput="saveNote()"></textarea>
+            <div class="flex-row" style="justify-content:space-between; align-items:center; margin-top:0.5rem;">
+                <span id="po_st" style="color:var(--success); font-size:0.85rem; opacity:0; transition:0.3s;">Zapisano!</span>
+                <button class="btn-secondary" style="padding:0.3rem 0.6rem; font-size:0.8rem; border-color:var(--danger); color:var(--danger);" onclick="if(confirm('Wyczyścić notatnik?')){document.getElementById('po_n').value=''; saveNote();}">Wyczyść</button>
+            </div>
+        </div>
+    </div>
+</section>
