@@ -1,77 +1,65 @@
 # FlashTools
 
-Zestaw narzędzi działających w całości w przeglądarce: kody QR, hasła, tekst/Markdown, PDF, DevTools, kolory, obrazy, Pomodoro.
-Strona jest hostowana na GitHub Pages i budowana automatycznie przez Jekyll.
+Darmowe narzędzia działające w całości w przeglądarce: kody QR, hasła, tekst/Markdown, PDF, DevTools, kolory, obrazy, Pomodoro.
+Strona: https://flashtools-web.github.io/ (GitHub Pages, budowana automatycznie przez Jekyll).
 
 ## Struktura
 
 ```
-index.html                 strona główna: lista modułów i skryptów (plik źródłowy, nie do otwierania wprost)
-_config.yml                konfiguracja strony (nazwa, opis, pliki wykluczone z publikacji)
+index.html                 strona główna (lista narzędzi)
+404.html                   strona "nie znaleziono"
+robots.txt                 instrukcje dla wyszukiwarek + adres mapy strony
+_config.yml                ustawienia strony (nazwa, adres, kod weryfikacji Google)
 
 _layouts/
-  default.html             szkielet każdej strony: <head>, nagłówek, stopka, skrypty
+  default.html             szkielet każdej strony: <head> z SEO, nagłówek, stopka, skrypty
   page.html                układ podstron tekstowych
 _includes/
   header.html              NAGŁÓWEK: zmiana tutaj działa na wszystkich stronach
   footer.html              STOPKA: zmiana tutaj działa na wszystkich stronach
-  modules/*.html           HTML poszczególnych modułów
+  modules/*.html           HTML narzędzi
 
 pages/
-  privacy.md               Polityka prywatności  -> privacy.html
-  terms.md                 Regulamin             -> terms.html
+  tools/*.html             podstrony narzędzi: tytuł, opis do Google, narzędzie + tekst opisowy
+  privacy.md, terms.md     Polityka prywatności, Regulamin
 
 assets/
-  css/style.css            style
-  js/core.js               wspólne funkcje (zakładki, schowek, pobieranie plików, przeciąganie plików)
-  js/router.js             przełączanie modułów (#qr, #pass, ...)
-  js/modules/*.js          logika poszczególnych modułów
+  css/style.css            wszystkie style (podzielone na sekcje)
+  js/core.js               wspólne funkcje (menu, zakładki, schowek, pobieranie plików)
+  js/modules/*.js          logika narzędzi
+  img/                     ikona strony i obrazek podglądu linku (og-image.png)
 
 podglad.bat                lokalny podgląd (dwuklik)
 tools/preview.ps1          skrypt budujący podgląd, używany przez podglad.bat
 ```
 
-Każdy moduł składa się z dwóch plików o tej samej nazwie:
-
-| Moduł | HTML | JS |
-|---|---|---|
-| Kody QR | `_includes/modules/qr.html` | `assets/js/modules/qr.js` |
-| Hasła | `_includes/modules/pass.html` | `assets/js/modules/pass.js` |
-| Tekst | `_includes/modules/text.html` | `assets/js/modules/text.js` |
-| PDF | `_includes/modules/pdf.html` | `assets/js/modules/pdf.js` |
-| DevTools | `_includes/modules/dev.html` | `assets/js/modules/dev.js` |
-| Kolory | `_includes/modules/color.html` | `assets/js/modules/color.js` |
-| Foto | `_includes/modules/img.html` | `assets/js/modules/img.js` |
-| Czas | `_includes/modules/prod.html` | `assets/js/modules/prod.js` |
+| Narzędzie | Adres | Podstrona | HTML | JS |
+|---|---|---|---|---|
+| Kody QR | `/generator-qr/` | `pages/tools/generator-qr.html` | `_includes/modules/qr.html` | `assets/js/modules/qr.js` |
+| Hasła | `/generator-hasel/` | `pages/tools/generator-hasel.html` | `_includes/modules/pass.html` | `assets/js/modules/pass.js` |
+| Tekst | `/formatowanie-tekstu/` | `pages/tools/formatowanie-tekstu.html` | `_includes/modules/text.html` | `assets/js/modules/text.js` |
+| PDF | `/narzedzia-pdf/` | `pages/tools/narzedzia-pdf.html` | `_includes/modules/pdf.html` | `assets/js/modules/pdf.js` |
+| DevTools | `/dev-tools/` | `pages/tools/dev-tools.html` | `_includes/modules/dev.html` | `assets/js/modules/dev.js` |
+| Kolory | `/kolory-wcag/` | `pages/tools/kolory-wcag.html` | `_includes/modules/color.html` | `assets/js/modules/color.js` |
+| Foto | `/konwerter-obrazow/` | `pages/tools/konwerter-obrazow.html` | `_includes/modules/img.html` | `assets/js/modules/img.js` |
+| Czas | `/pomodoro/` | `pages/tools/pomodoro.html` | `_includes/modules/prod.html` | `assets/js/modules/prod.js` |
 
 ## Podgląd lokalny
 
 Kliknij dwukrotnie **`podglad.bat`**. Skrypt zbuduje stronę do folderu `_preview` i otworzy ją w przeglądarce.
-Po każdej zmianie uruchom go ponownie. Plików w `_preview` nie edytuj, bo są generowane od nowa.
+Po każdej zmianie uruchom go ponownie. Plików w `_preview` nie edytuj.
 
-## Dodanie nowego modułu
+## Dodanie nowego narzędzia
 
-1. `_includes/modules/nazwa.html`: sekcja `<section id="view-nazwa" class="tool-view">`.
+1. `_includes/modules/nazwa.html`: `<section class="tool-view">` z `<div class="tool-header"><h1>...</h1>`.
 2. `assets/js/modules/nazwa.js`: logika.
-3. W `index.html` dopisz `{% include modules/nazwa.html %}` oraz `modules/nazwa.js` na liście `scripts`.
-4. W `_includes/header.html` dodaj link `<a class="nav-link" data-module="nazwa" href="index.html#nazwa">`.
+3. `pages/tools/adres.html`: skopiuj istniejącą podstronę i zmień `permalink`, `title`, `description`, `app_name`, skrypty, include i tekst opisowy.
+4. Dodaj link w `_includes/header.html`, `_includes/footer.html` i kafelek na stronie głównej (`index.html`).
 
-## Dodanie podstrony tekstowej
+Mapa strony (`sitemap.xml`) aktualizuje się sama.
 
-Utwórz plik `pages/nazwa.md`:
+## SEO - zasady
 
-```
----
-layout: page
-permalink: /nazwa.html
-title: Tytuł strony
----
-
-Treść w Markdown...
-```
-
-## Publikacja na GitHub Pages
-
-1. Wrzuć zawartość folderu do repozytorium na GitHubie.
-2. Settings -> Pages -> Source: *Deploy from a branch*, branch `main`, folder `/ (root)`.
-3. Po około minucie strona będzie pod `https://<login>.github.io/<repozytorium>/`.
+- `title`: do ok. 60 znaków, najważniejsza fraza na początku.
+- `description`: do ok. 155 znaków, zachęca do kliknięcia.
+- Każda strona ma dokładnie jeden nagłówek `<h1>`.

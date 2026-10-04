@@ -1,0 +1,32 @@
+---
+layout: default
+permalink: /generator-hasel/
+tool: pass
+app_name: Generator haseł
+title: Generator haseł i test siły hasła online | FlashTools
+description: Wygeneruj silne, losowe hasła i sprawdź, ile czasu zajęłoby ich złamanie. Wszystko dzieje się w przeglądarce – hasła nigdzie nie są wysyłane.
+vendor_scripts:
+  - https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js
+scripts:
+  - modules/pass.js
+---
+{% include modules/pass.html %}
+
+<article class="panel seo-content">
+    <h2>Jak działa generator haseł?</h2>
+    <p>Hasła są tworzone przy użyciu kryptograficznego generatora liczb losowych wbudowanego w przeglądarkę (Web Crypto API). Każdy znak jest losowany z równym prawdopodobieństwem, więc hasła są naprawdę przypadkowe. Możesz ustawić długość od 8 do 64 znaków, wybrać rodzaje znaków i wygenerować do 20 haseł naraz.</p>
+
+    <h2>Sprawdzanie siły hasła</h2>
+    <p>Weryfikator korzysta z biblioteki zxcvbn, która rozpoznaje popularne hasła, słowa ze słownika, imiona, daty, sekwencje (abc, 123) i wzory klawiaturowe (qwerty). Pokazuje ocenę hasła, szacowany czas jego złamania i wskazówki, co poprawić.</p>
+
+    <h2>Jak stworzyć silne hasło?</h2>
+    <ul>
+        <li>Używaj co najmniej 12–16 znaków – długość ma największe znaczenie.</li>
+        <li>Łącz wielkie i małe litery, cyfry oraz znaki specjalne.</li>
+        <li>Nie używaj tego samego hasła w wielu serwisach.</li>
+        <li>Przechowuj hasła w menedżerze haseł zamiast je zapamiętywać.</li>
+    </ul>
+
+    <h2>Czy to bezpieczne?</h2>
+    <p>Tak. Generowanie i sprawdzanie haseł odbywa się wyłącznie na Twoim urządzeniu. Wpisane i wygenerowane hasła nie są nigdzie wysyłane ani zapisywane.</p>
+</article>

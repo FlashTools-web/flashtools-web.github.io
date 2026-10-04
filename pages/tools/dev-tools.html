@@ -1,0 +1,26 @@
+---
+layout: default
+permalink: /dev-tools/
+tool: dev
+app_name: Narzędzia dla programistów
+title: JSON formatter, Base64, MD5 i SHA-256 online | FlashTools
+description: Formatuj i minifikuj JSON, koduj i dekoduj Base64 (UTF-8), licz skróty MD5 i SHA-256. Szybkie narzędzia dla programistów działające w przeglądarce.
+vendor_scripts:
+  - https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js
+scripts:
+  - modules/dev.js
+---
+{% include modules/dev.html %}
+
+<article class="panel seo-content">
+    <h2>Formatowanie i walidacja JSON</h2>
+    <p>Wklej JSON, a narzędzie sprawdzi jego poprawność i wyświetli go w czytelnej formie z wcięciami (Beautify) lub w jednej linii bez zbędnych spacji (Minify). W przypadku błędu zobaczysz komunikat wskazujący problem.</p>
+
+    <h2>Kodowanie i dekodowanie Base64</h2>
+    <p>Tekst jest kodowany do Base64 z pełną obsługą UTF-8, więc polskie znaki i emoji są zachowane. Jeśli wkleisz tekst w Base64, w polu „Base64 Decode” od razu zobaczysz jego zdekodowaną treść.</p>
+
+    <h2>Skróty MD5 i SHA-256</h2>
+    <p>Dla wpisanego tekstu obliczane są jednocześnie skróty MD5 i SHA-256 – przydatne do porównywania danych i sprawdzania sum kontrolnych. Pamiętaj, że MD5 nie nadaje się do zabezpieczania haseł.</p>
+
+    <p>Wszystkie obliczenia odbywają się lokalnie w przeglądarce – wklejone dane nie są nigdzie wysyłane.</p>
+</article>

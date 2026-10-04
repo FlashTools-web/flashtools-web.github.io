@@ -1,6 +1,6 @@
 <!-- 4. PDF -->
 <section id="view-pdf" class="tool-view">
-    <div class="tool-header"><h2>📄 Narzędzia PDF</h2><p>Odblokowuj, łącz, wyodrębniaj i nakładaj znaki wodne. Działa offline w RAM.</p></div>
+    <div class="tool-header"><h1>📄 Narzędzia PDF online</h1><p>Odblokowuj, łącz, wyodrębniaj i nakładaj znaki wodne. Działa offline w RAM.</p></div>
     <div class="panel">
         <div class="tabs" id="pdfTabs">
             <div class="tab active" data-target="pdf-merge" onclick="setPdfMode('merge')">🔗 Połącz PDF</div>
@@ -9,20 +9,20 @@
             <div class="tab" data-target="pdf-unlock" onclick="setPdfMode('unlock')">🔓 Odblokuj</div>
             <div class="tab" data-target="pdf-img" onclick="setPdfMode('img2pdf')">🖼️ Zdjęcia do PDF</div>
         </div>
-        
+
         <div id="pdfDrop" class="drop-zone" onclick="document.getElementById('pdfIn').click()">📂 Kliknij lub upuść pliki tutaj</div>
-        <input type="file" id="pdfIn" multiple accept=".pdf" style="display:none;" onchange="handlePdf(this.files)">
-        <div id="pdfList" style="margin-top:1.5rem;"></div>
-        
-        <div id="pdfOpt_extract" style="display:none; margin-top:1.5rem;" class="form-group"><label>Numery stron (np. 1, 3, 5):</label><input type="text" id="pdf_extr_val" value="1"></div>
-        <div id="pdfOpt_unlock" style="display:none; margin-top:1.5rem;" class="form-group"><label>Hasło do pliku (do zdjęcia blokady):</label><input type="password" id="pdf_pass_val"></div>
-        
-        <div id="pdfOpt_watermark" style="display:none; margin-top:1.5rem;" class="flex-row">
+        <input type="file" id="pdfIn" class="is-hidden" multiple accept=".pdf" onchange="handlePdf(this.files)">
+        <div id="pdfList"></div>
+
+        <div id="pdfOpt_extract" class="form-group pdf-option is-hidden"><label>Numery stron (np. 1, 3, 5-7):</label><input type="text" id="pdf_extr_val" value="1"></div>
+        <div id="pdfOpt_unlock" class="form-group pdf-option is-hidden"><label>Hasło do pliku (do zdjęcia blokady):</label><input type="password" id="pdf_pass_val"></div>
+
+        <div id="pdfOpt_watermark" class="flex-row pdf-option is-hidden">
             <div class="form-group flex-1"><label>Tekst znaku</label><input type="text" id="pdf_wm_txt" value="POUFNE"></div>
             <div class="form-group flex-1"><label>Rozmiar fontu</label><input type="number" id="pdf_wm_sz" value="60"></div>
-            <div class="form-group flex-1"><label>Kolor (HEX)</label><input type="color" id="pdf_wm_col" value="#ff0000" style="height:45px; border:none; padding:0;"></div>
+            <div class="form-group flex-1"><label>Kolor (HEX)</label><input type="color" id="pdf_wm_col" class="color-input" value="#ff0000"></div>
         </div>
 
-        <button id="pdfBtn" class="btn-primary" style="display:none; margin-top:1.5rem; background:var(--success);" onclick="processPdf()">⚙️ Przetwarzaj Pliki</button>
+        <button id="pdfBtn" class="btn-primary btn-success is-hidden" onclick="processPdf()">⚙️ Przetwarzaj Pliki</button>
     </div>
 </section>

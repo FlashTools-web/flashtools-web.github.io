@@ -1,0 +1,30 @@
+---
+layout: default
+permalink: /formatowanie-tekstu/
+tool: text
+app_name: Licznik znaków i formatowanie tekstu
+title: Licznik znaków, słów i zmiana wielkości liter | FlashTools
+description: Policz znaki, słowa i linie, zamień tekst na WIELKIE lub małe litery, usuń zbędne spacje i podejrzyj Markdown na żywo. Darmowe narzędzie online.
+vendor_scripts:
+  - https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js
+scripts:
+  - modules/text.js
+---
+{% include modules/text.html %}
+
+<article class="panel seo-content">
+    <h2>Licznik znaków online</h2>
+    <p>Wklej lub wpisz tekst, a licznik od razu pokaże liczbę znaków (ze spacjami), słów i linii. Przydaje się przy pisaniu postów w social media, opisów produktów, meta opisów stron czy prac z limitem znaków.</p>
+
+    <h2>Zmiana wielkości liter</h2>
+    <ul>
+        <li><strong>UPPERCASE</strong> – zamienia cały tekst na wielkie litery.</li>
+        <li><strong>lowercase</strong> – zamienia cały tekst na małe litery.</li>
+        <li><strong>Title Case</strong> – każde słowo zaczyna się wielką literą (poprawnie obsługuje polskie znaki).</li>
+        <li><strong>Usuń puste spacje</strong> – usuwa podwójne spacje i spacje na początku oraz końcu linii.</li>
+    </ul>
+
+    <h2>Podgląd Markdown</h2>
+    <p>Tekst w formacie Markdown (nagłówki <code>#</code>, pogrubienia <code>**tekst**</code>, listy, linki) jest na bieżąco zamieniany na sformatowany podgląd. Wygodne przy pisaniu plików README, notatek i dokumentacji.</p>
+</article>

@@ -1,28 +1,73 @@
 ---
 layout: default
-vendor_scripts:
-  - https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js
-  - https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js
-scripts:
-  - modules/qr.js
-  - modules/pass.js
-  - modules/text.js
-  - modules/pdf.js
-  - modules/dev.js
-  - modules/color.js
-  - modules/img.js
-  - modules/prod.js
-  - router.js
+permalink: /
+home: true
+title: FlashTools – darmowe narzędzia online (QR, PDF, hasła i więcej)
+description: Darmowe narzędzia online w jednym miejscu – generator kodów QR, łączenie PDF, generator haseł, konwerter zdjęć, JSON i Base64. Bez rejestracji.
 ---
-{% include modules/qr.html %}
-{% include modules/pass.html %}
-{% include modules/text.html %}
-{% include modules/pdf.html %}
-{% include modules/dev.html %}
-{% include modules/color.html %}
-{% include modules/img.html %}
-{% include modules/prod.html %}
+<section class="hero">
+    <h1>Darmowe narzędzia online, które działają w Twojej przeglądarce</h1>
+    <p>Generator kodów QR, narzędzia PDF, generator haseł, konwerter zdjęć i więcej – w jednym miejscu. Bez rejestracji, bez instalacji, a Twoje pliki nigdy nie opuszczają Twojego urządzenia.</p>
+</section>
+
+<section class="tools-grid" aria-label="Lista narzędzi">
+    <a class="tool-card" href="/generator-qr/">
+        <span class="tool-card-icon">🔲</span>
+        <h2>Generator kodów QR</h2>
+        <p>Kody QR dla linków, WiFi, wizytówek vCard, SMS-ów i wydarzeń. Własne kolory i logo, eksport do PNG i SVG.</p>
+    </a>
+    <a class="tool-card" href="/narzedzia-pdf/">
+        <span class="tool-card-icon">📄</span>
+        <h2>Narzędzia PDF</h2>
+        <p>Łączenie PDF, wyodrębnianie stron, znak wodny, usuwanie hasła i zamiana zdjęć na PDF.</p>
+    </a>
+    <a class="tool-card" href="/generator-hasel/">
+        <span class="tool-card-icon">🔑</span>
+        <h2>Generator haseł</h2>
+        <p>Silne, losowe hasła oraz sprawdzanie siły hasła z szacowanym czasem jego złamania.</p>
+    </a>
+    <a class="tool-card" href="/konwerter-obrazow/">
+        <span class="tool-card-icon">🖼️</span>
+        <h2>Konwerter zdjęć</h2>
+        <p>Zmiana formatu na JPG, PNG lub WEBP i kompresja zdjęć z regulacją jakości.</p>
+    </a>
+    <a class="tool-card" href="/formatowanie-tekstu/">
+        <span class="tool-card-icon">✍️</span>
+        <h2>Licznik znaków</h2>
+        <p>Liczenie znaków, słów i linii, zmiana wielkości liter, usuwanie spacji i podgląd Markdown.</p>
+    </a>
+    <a class="tool-card" href="/dev-tools/">
+        <span class="tool-card-icon">💻</span>
+        <h2>JSON, Base64, MD5, SHA-256</h2>
+        <p>Formatowanie i walidacja JSON, kodowanie Base64 z obsługą UTF-8 oraz skróty MD5 i SHA-256.</p>
+    </a>
+    <a class="tool-card" href="/kolory-wcag/">
+        <span class="tool-card-icon">🎨</span>
+        <h2>Kontrast kolorów WCAG</h2>
+        <p>Sprawdzanie kontrastu tekstu i tła, konwersja HEX na RGB, paleta odcieni i pipeta ze zdjęcia.</p>
+    </a>
+    <a class="tool-card" href="/pomodoro/">
+        <span class="tool-card-icon">⏱️</span>
+        <h2>Timer Pomodoro</h2>
+        <p>25-minutowy timer do pracy w skupieniu i notatnik z automatycznym zapisem.</p>
+    </a>
+</section>
+
+<section class="panel seo-content">
+    <h2>Dlaczego FlashTools?</h2>
+    <ul>
+        <li><strong>Prywatność</strong> – wszystkie narzędzia działają w Twojej przeglądarce. Pliki PDF, zdjęcia, hasła i teksty nie są wysyłane na żaden serwer.</li>
+        <li><strong>Za darmo i bez rejestracji</strong> – otwierasz stronę i od razu korzystasz z narzędzia.</li>
+        <li><strong>Szybko</strong> – brak wysyłania i pobierania plików z serwera oznacza natychmiastowe wyniki.</li>
+        <li><strong>Na każdym urządzeniu</strong> – działa na komputerze, tablecie i telefonie, bez instalowania aplikacji.</li>
+    </ul>
+</section>
+
+<script>
+    // Przekierowanie starych adresów z jednej strony (#qr, #pdf...) na nowe podstrony
+    (function () {
+        const map = { qr: 'generator-qr', pass: 'generator-hasel', text: 'formatowanie-tekstu', pdf: 'narzedzia-pdf', dev: 'dev-tools', color: 'kolory-wcag', img: 'konwerter-obrazow', prod: 'pomodoro' };
+        const target = map[location.hash.slice(1)];
+        if (target) location.replace('/' + target + '/');
+    })();
+</script>

@@ -1,7 +1,14 @@
 # Konfiguracja Jekyll dla GitHub Pages
 title: FlashTools
-description: "Kompleksowy zestaw narzędzi: Generator kodów QR, Hasła, DevTools, Edycja PDF i więcej."
+url: "https://flashtools-web.github.io"
 lang: pl
+
+# Kod z Google Search Console (metoda "Tag HTML"): usuń "#" na początku linii poniżej i wklej wartość content="..."
+# google_site_verification: "TU_WKLEJ_KOD"
+
+# Mapa strony (sitemap.xml) generowana automatycznie przez GitHub Pages
+plugins:
+  - jekyll-sitemap
 
 # Pliki, których Jekyll nie publikuje
 exclude:

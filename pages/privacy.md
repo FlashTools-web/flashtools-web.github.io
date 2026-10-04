@@ -1,7 +1,9 @@
 ---
 layout: page
 permalink: /privacy.html
-title: Polityka Prywatności i Plików Cookies
+title: Polityka prywatności i cookies | FlashTools
+description: Jak FlashTools przetwarza dane. Narzędzia działają w przeglądarce, pliki i wpisywane treści nie są wysyłane na serwer.
+heading: Polityka Prywatności i Plików Cookies
 ---
 
 ### 1. Przetwarzanie Danych (Client-Side)

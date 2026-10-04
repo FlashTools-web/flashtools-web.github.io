@@ -1,43 +1,43 @@
 <!-- 6. KOLORY -->
 <section id="view-color" class="tool-view">
-    <div class="tool-header"><h2>🎨 Studio Kolorów</h2><p>Konwersje palet, kroplomierz ze zdjęć i audyt WCAG.</p></div>
+    <div class="tool-header"><h1>🎨 Kontrast kolorów WCAG i pipeta</h1><p>Konwersje palet, kroplomierz ze zdjęć i audyt WCAG.</p></div>
     <div class="flex-row">
         <div class="flex-1 panel">
             <h3>Wybierak i WCAG</h3><br>
-            <div class="flex-row" style="margin-bottom:1rem;">
-                <div class="flex-1"><label>Kolor Tła</label><input type="color" id="c_bg" value="#18181b" oninput="updColor()" style="width:100%; height:50px; border:none; padding:0;"></div>
-                <div class="flex-1"><label>Kolor Tekstu</label><input type="color" id="c_fg" value="#00d2ff" oninput="updColor()" style="width:100%; height:50px; border:none; padding:0;"></div>
+            <div class="flex-row mb-1">
+                <div class="flex-1"><label>Kolor Tła</label><input type="color" id="c_bg" class="color-input" value="#18181b" oninput="updColor()"></div>
+                <div class="flex-1"><label>Kolor Tekstu</label><input type="color" id="c_fg" class="color-input" value="#00d2ff" oninput="updColor()"></div>
             </div>
-            <div class="flex-row" style="margin-bottom:1.5rem; font-family:monospace; font-size:0.9rem;">
+            <div class="flex-row color-codes">
                 <div class="flex-1">
-                    <div>HEX: <span id="c_h_bg" style="color:var(--accent);">#18181b</span></div>
+                    <div>HEX: <span id="c_h_bg" class="text-accent">#18181b</span></div>
                     <div>RGB: <span id="c_r_bg">24, 24, 27</span></div>
                 </div>
                 <div class="flex-1">
-                    <div>HEX: <span id="c_h_fg" style="color:var(--accent);">#00d2ff</span></div>
+                    <div>HEX: <span id="c_h_fg" class="text-accent">#00d2ff</span></div>
                     <div>RGB: <span id="c_r_fg">0, 210, 255</span></div>
                 </div>
             </div>
-            
-            <div id="c_box" style="padding:2rem; border-radius:8px; border:1px solid var(--border); text-align:center; margin-bottom:1.5rem; transition:0.2s;">
-                <h2 style="margin:0;">Podgląd Testowy</h2><p style="margin-top:0.5rem;">Podgląd kontrastu w praktyce.</p>
+
+            <div id="c_box">
+                <h2>Podgląd Testowy</h2><p>Podgląd kontrastu w praktyce.</p>
             </div>
-            <div style="background:rgba(0,0,0,0.3); padding:1rem; border-radius:8px; text-align:center;">
-                Kontrast WCAG: <span id="c_rat" style="font-size:1.5rem; font-weight:bold;">0.00</span> : 1 <br>
+            <div class="contrast-box">
+                Kontrast WCAG: <span id="c_rat">0.00</span> : 1 <br>
                 <span id="c_an">Normalny: Oczekuję</span> | <span id="c_al">Duży: Oczekuję</span>
             </div>
-            
-            <h3 style="margin-top:2rem;">Paleta (Odcienie Tła)</h3>
-            <div id="c_pal" style="display:flex; height:40px; margin-top:1rem; border-radius:8px; overflow:hidden;"></div>
+
+            <h3 class="mt-2">Paleta (Odcienie Tła)</h3>
+            <div id="c_pal"></div>
         </div>
-        
+
         <div class="flex-1 panel">
-            <h3>Kroplomierz ze zdjęcia</h3><p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Wgraj zdjęcie do Canvasa i kliknij w nie, aby pobrać kolor (Działa offline).</p>
-            <input type="file" accept="image/*" onchange="loadColorImg(this)" style="margin-bottom:1rem;">
-            <canvas id="c_cvs" style="max-width:100%; max-height:300px; border:1px solid var(--border); border-radius:8px; cursor:crosshair; display:none;"></canvas>
-            <div style="margin-top:1rem; display:flex; align-items:center; gap:10px;">
-                <div id="c_pick_box" style="width:50px; height:50px; border-radius:8px; background:transparent; border:1px solid var(--border);"></div>
-                <div>Pobrany kolor: <span id="c_pick_txt" style="font-family:monospace; font-weight:bold; color:var(--accent);"># Brak</span></div>
+            <h3>Kroplomierz ze zdjęcia</h3><p class="panel-hint">Wgraj zdjęcie do Canvasa i kliknij w nie, aby pobrać kolor (Działa offline).</p>
+            <input type="file" class="mb-1" accept="image/*" onchange="loadColorImg(this)">
+            <canvas id="c_cvs" class="canvas-preview is-hidden"></canvas>
+            <div class="picker-result">
+                <div id="c_pick_box"></div>
+                <div>Pobrany kolor: <span id="c_pick_txt"># Brak</span></div>
             </div>
         </div>
     </div>

@@ -1,18 +1,18 @@
 <!-- 7. OBRAZY -->
 <section id="view-img" class="tool-view">
-    <div class="tool-header"><h2>🖼️ Obróbka Obrazów</h2><p>Lokalna kompresja i zmiana formatu (Canvas API).</p></div>
+    <div class="tool-header"><h1>🖼️ Konwerter i kompresja zdjęć</h1><p>Lokalna kompresja i zmiana formatu (Canvas API).</p></div>
     <div class="desktop-split">
         <div class="main-panel panel">
-            <div id="i_drop" class="drop-zone" onclick="document.getElementById('i_in').click()" style="padding:1.5rem;">📂 Kliknij lub upuść zdjęcie tutaj</div>
-            <input type="file" id="i_in" accept="image/*" style="display:none;" onchange="loadImg(this.files[0])">
-            
-            <div class="form-group" style="margin-top:1.5rem;"><label>Format wyjściowy</label><select id="i_fmt" onchange="document.getElementById('i_q_grp').style.display=this.value==='image/png'?'none':'block'"><option value="image/jpeg">JPEG</option><option value="image/png">PNG</option><option value="image/webp">WEBP</option></select></div>
+            <div id="i_drop" class="drop-zone drop-zone-sm" onclick="document.getElementById('i_in').click()">📂 Kliknij lub upuść zdjęcie tutaj</div>
+            <input type="file" id="i_in" class="is-hidden" accept="image/*" onchange="loadImg(this.files[0])">
+
+            <div class="form-group mt-15"><label>Format wyjściowy</label><select id="i_fmt" onchange="document.getElementById('i_q_grp').style.display=this.value==='image/png'?'none':'block'"><option value="image/jpeg">JPEG</option><option value="image/png">PNG</option><option value="image/webp">WEBP</option></select></div>
             <div class="form-group" id="i_q_grp"><label>Jakość: <span id="i_qv">80</span>%</label><input type="range" id="i_q" min="10" max="100" value="80" oninput="document.getElementById('i_qv').innerText=this.value"></div>
             <button class="btn-primary" onclick="exportImg()">Pobierz Skonwertowany Plik</button>
         </div>
-        <div class="side-panel panel" style="justify-content:center;">
-            <canvas id="i_cvs" style="max-width:100%; max-height:300px; border-radius:8px; display:none; border:1px solid var(--border);"></canvas>
-            <span id="i_txt" style="color:var(--text-muted);">Brak podglądu</span>
+        <div class="side-panel panel panel-middle">
+            <canvas id="i_cvs" class="canvas-preview is-hidden"></canvas>
+            <span id="i_txt">Brak podglądu</span>
         </div>
     </div>
 </section>

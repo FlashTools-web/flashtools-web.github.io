@@ -1,22 +1,22 @@
 <!-- 3. TEKST -->
 <section id="view-text" class="tool-view">
-    <div class="tool-header"><h2>✍️ Formatowanie & Markdown</h2><p>Oczyszczanie tekstu, statystyki i podgląd na żywo.</p></div>
+    <div class="tool-header"><h1>✍️ Licznik znaków i formatowanie tekstu</h1><p>Oczyszczanie tekstu, statystyki i podgląd na żywo.</p></div>
     <div class="panel">
-        <div class="flex-row" style="gap:2rem; margin-bottom:1.5rem; font-size:1.1rem; background:rgba(0,0,0,0.2); padding:1rem; border-radius:8px;">
-            <div>Znaków: <span id="t_chr" style="color:var(--accent); font-weight:bold;">0</span></div>
-            <div>Słów: <span id="t_wrd" style="color:var(--accent); font-weight:bold;">0</span></div>
-            <div>Linii: <span id="t_lin" style="color:var(--accent); font-weight:bold;">0</span></div>
+        <div class="flex-row stats-bar">
+            <div>Znaków: <span id="t_chr" class="stat-value">0</span></div>
+            <div>Słów: <span id="t_wrd" class="stat-value">0</span></div>
+            <div>Linii: <span id="t_lin" class="stat-value">0</span></div>
         </div>
-        <div class="flex-row" style="margin-bottom:1.5rem;">
+        <div class="flex-row mb-15">
             <button class="btn-secondary flex-1" onclick="fmtTxt('UP')">UPPERCASE</button>
             <button class="btn-secondary flex-1" onclick="fmtTxt('LO')">lowercase</button>
             <button class="btn-secondary flex-1" onclick="fmtTxt('TI')">Title Case</button>
             <button class="btn-secondary flex-1" onclick="fmtTxt('CL')">Usuń puste spacje</button>
-            <button class="btn-secondary flex-1" style="border-color:var(--accent);" onclick="genLorem()">+ Lorem Ipsum</button>
+            <button class="btn-secondary btn-highlight flex-1" onclick="genLorem()">+ Lorem Ipsum</button>
         </div>
         <div class="flex-row">
             <textarea id="t_in" class="flex-1" placeholder="Wklej tekst lub kod Markdown..." oninput="parseTxt()"></textarea>
-            <div id="t_out" class="flex-1" style="background:rgba(0,0,0,0.2); border:1px solid var(--border); padding:1.5rem; border-radius:8px; min-height:250px; overflow-y:auto;">Podgląd HTML...</div>
+            <div id="t_out" class="flex-1">Podgląd HTML...</div>
         </div>
     </div>
 </section>

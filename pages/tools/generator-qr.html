@@ -1,0 +1,34 @@
+---
+layout: default
+permalink: /generator-qr/
+tool: qr
+app_name: Generator kodów QR
+title: Darmowy generator kodów QR z logo i kolorami | FlashTools
+description: Stwórz kod QR dla linku, sieci WiFi, wizytówki vCard, SMS-a, e-maila lub wydarzenia. Własne kolory i logo, pobieranie PNG i SVG. Za darmo, bez rejestracji.
+vendor_scripts:
+  - https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js
+scripts:
+  - modules/qr.js
+---
+{% include modules/qr.html %}
+
+<article class="panel seo-content">
+    <h2>Jak stworzyć kod QR?</h2>
+    <ol>
+        <li>Wybierz typ kodu: link (URL), tekst, sieć WiFi, wizytówka vCard, e-mail, SMS, telefon, lokalizacja, profil w social media, adres portfela kryptowalut albo wydarzenie.</li>
+        <li>Uzupełnij pola – podgląd kodu QR aktualizuje się na bieżąco.</li>
+        <li>Opcjonalnie zmień kolory, zaokrąglenie punktów lub dodaj własne logo na środku.</li>
+        <li>Pobierz gotowy kod jako PNG (do druku i internetu) lub SVG (grafika wektorowa, skalowalna bez utraty jakości).</li>
+    </ol>
+
+    <h2>Kod QR do sieci WiFi</h2>
+    <p>Kod QR z danymi sieci WiFi pozwala gościom połączyć się z internetem bez przepisywania hasła – wystarczy zeskanować go aparatem telefonu. Generator poprawnie obsługuje znaki specjalne w nazwie sieci i haśle.</p>
+
+    <h2>Najczęstsze pytania</h2>
+    <h3>Czy kody QR są darmowe i czy wygasają?</h3>
+    <p>Tak, generator jest całkowicie darmowy. Kody są statyczne – dane są zapisane bezpośrednio w kodzie, więc działają bez końca i nie zależą od żadnego serwera.</p>
+    <h3>Czy mogę dodać logo do kodu QR?</h3>
+    <p>Tak. Po dodaniu logo generator automatycznie zwiększa poziom korekcji błędów, aby kod pozostał czytelny. Pasek „Czytelność” podpowiada, czy wybrane kolory mają wystarczający kontrast do skanowania.</p>
+    <h3>Czy moje dane są gdzieś wysyłane?</h3>
+    <p>Nie. Kod QR powstaje w Twojej przeglądarce. Historia ostatnich kodów zapisuje się wyłącznie na Twoim urządzeniu.</p>
+</article>

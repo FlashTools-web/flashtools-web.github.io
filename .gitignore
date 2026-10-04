@@ -1,0 +1,8 @@
+# Lokalny podglad (generowany przez podglad.bat)
+_preview/
+# Wynik budowania Jekylla
+_site/
+.jekyll-cache/
+# Pliki systemowe Windows
+Thumbs.db
+desktop.ini

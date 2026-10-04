@@ -23,7 +23,7 @@ function updColor() {
     for (let i = 0; i < 5; i++) {
         const f = 1 - (i * 0.15);
         const shade = '#' + [rB * f, gB * f, bB * f].map(x => Math.floor(x).toString(16).padStart(2, '0')).join('');
-        pal += `<div style="flex:1; background:${shade}; cursor:pointer;" title="${shade}" onclick="copyTextToClipboard('${shade}')"></div>`;
+        pal += `<div class="palette-swatch" style="background:${shade};" title="${shade}" onclick="copyTextToClipboard('${shade}')"></div>`;
     }
     document.getElementById('c_pal').innerHTML = pal;
 }
@@ -54,3 +54,4 @@ cCvs.addEventListener('click', evt => {
     document.getElementById('c_bg').value = hex;
     updColor();
 });
+updColor();

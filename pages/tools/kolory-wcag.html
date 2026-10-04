@@ -1,0 +1,27 @@
+---
+layout: default
+permalink: /kolory-wcag/
+tool: color
+app_name: Kontrast kolorów WCAG
+title: Sprawdzanie kontrastu kolorów WCAG i pipeta online | FlashTools
+description: Sprawdź kontrast kolorów według WCAG, przelicz HEX na RGB, wygeneruj odcienie i pobierz kolor ze zdjęcia pipetą. Za darmo i bez instalacji.
+scripts:
+  - modules/color.js
+---
+{% include modules/color.html %}
+
+<article class="panel seo-content">
+    <h2>Kontrast kolorów według WCAG</h2>
+    <p>Wytyczne dostępności WCAG określają minimalny kontrast między kolorem tekstu a tłem, aby treść była czytelna również dla osób słabowidzących:</p>
+    <ul>
+        <li><strong>4.5 : 1</strong> – minimum dla zwykłego tekstu (poziom AA),</li>
+        <li><strong>3 : 1</strong> – minimum dla dużego tekstu, np. nagłówków (poziom AA).</li>
+    </ul>
+    <p>Wybierz kolor tła i tekstu, a narzędzie obliczy współczynnik kontrastu i pokaże, czy spełnia wymagania. Podgląd od razu pokazuje, jak wygląda tekst w wybranych kolorach.</p>
+
+    <h2>Konwersja HEX na RGB i paleta odcieni</h2>
+    <p>Dla każdego koloru zobaczysz jego zapis HEX i RGB. Paleta odcieni generuje 5 coraz ciemniejszych wariantów koloru tła – kliknij odcień, aby skopiować jego kod.</p>
+
+    <h2>Pipeta – kolor ze zdjęcia</h2>
+    <p>Wgraj zdjęcie lub zrzut ekranu i kliknij w dowolne miejsce, aby odczytać dokładny kolor. Zdjęcie jest analizowane w przeglądarce i nie jest nigdzie wysyłane.</p>
+</article>

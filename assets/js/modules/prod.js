@@ -17,9 +17,7 @@ function updPo() {
 function setPoBtn(label, active) {
     const b = document.getElementById('po_b');
     b.innerText = label;
-    b.style.background = active ? "var(--accent)" : "transparent";
-    b.style.color = active ? "#000" : "var(--text)";
-    b.style.border = active ? "none" : "1px solid var(--border)";
+    b.classList.toggle('paused', !active);
 }
 
 function togglePomo() {
@@ -51,8 +49,9 @@ function resetPomo() {
 function saveNote() {
     clearTimeout(ntTmr);
     storageSet(NOTE_KEY, document.getElementById('po_n').value);
-    document.getElementById('po_st').style.opacity = 1;
-    ntTmr = setTimeout(() => document.getElementById('po_st').style.opacity = 0, 2000);
+    const status = document.getElementById('po_st');
+    status.classList.add('visible');
+    ntTmr = setTimeout(() => status.classList.remove('visible'), 2000);
 }
 
 document.getElementById('po_n').value = storageGet(NOTE_KEY, '');

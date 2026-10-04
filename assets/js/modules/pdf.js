@@ -31,7 +31,7 @@ function handlePdf(f) {
         list.innerHTML = pFiles.map((x, i) => `<div class="file-item">${i + 1}. ${escapeHtml(x.name)}</div>`).join('');
         document.getElementById('pdfBtn').style.display = 'block';
     } else {
-        list.innerHTML = `<div class="file-item" style="color:var(--danger);">Nieobsługiwany typ pliku. Wybierz ${pMode === 'img2pdf' ? 'zdjęcia JPG lub PNG' : 'pliki PDF'}.</div>`;
+        list.innerHTML = `<div class="file-item error">Nieobsługiwany typ pliku. Wybierz ${pMode === 'img2pdf' ? 'zdjęcia JPG lub PNG' : 'pliki PDF'}.</div>`;
         document.getElementById('pdfBtn').style.display = 'none';
     }
     // Pozwala wybrać ponownie ten sam plik

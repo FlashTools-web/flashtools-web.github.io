@@ -4,6 +4,12 @@
 const footerYear = document.getElementById('footerYear');
 if (footerYear) footerYear.textContent = new Date().getFullYear();
 
+// Podświetlenie aktywnej pozycji menu (porównanie adresu linku z adresem strony)
+const normalizePath = p => p.replace(/index\.html$/, '');
+document.querySelectorAll('.nav-link').forEach(a => {
+    a.classList.toggle('active', normalizePath(a.pathname) === normalizePath(location.pathname));
+});
+
 // Przełączanie zakładek (.tabs > .tab[data-target])
 document.querySelectorAll('.tabs').forEach(g => {
     g.addEventListener('click', e => {

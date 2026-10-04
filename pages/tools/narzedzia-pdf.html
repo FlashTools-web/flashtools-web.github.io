@@ -1,0 +1,33 @@
+---
+layout: default
+permalink: /narzedzia-pdf/
+tool: pdf
+app_name: Narzędzia PDF online
+title: Łączenie PDF, znak wodny i zdjęcia do PDF online | FlashTools
+description: Połącz pliki PDF, wyodrębnij strony, dodaj znak wodny, usuń hasło lub zamień zdjęcia na PDF. Pliki nie opuszczają Twojej przeglądarki.
+vendor_scripts:
+  - https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js
+scripts:
+  - modules/pdf.js
+---
+{% include modules/pdf.html %}
+
+<article class="panel seo-content">
+    <h2>Co możesz zrobić z plikami PDF?</h2>
+    <ul>
+        <li><strong>Połącz PDF</strong> – scal kilka plików PDF w jeden dokument w wybranej kolejności.</li>
+        <li><strong>Wydobądź strony</strong> – utwórz nowy PDF tylko z wybranych stron, np. <code>1, 3, 5-7</code>.</li>
+        <li><strong>Znak wodny</strong> – dodaj półprzezroczysty napis (np. „POUFNE”) na każdej stronie. Obsługiwane są polskie znaki.</li>
+        <li><strong>Odblokuj</strong> – usuń zabezpieczenie z pliku, do którego znasz hasło.</li>
+        <li><strong>Zdjęcia do PDF</strong> – zamień zdjęcia JPG i PNG w dokument PDF, jedno zdjęcie na stronę.</li>
+    </ul>
+
+    <h2>Czy moje pliki są bezpieczne?</h2>
+    <p>Tak. Wszystkie operacje odbywają się w pamięci Twojej przeglądarki – pliki PDF nie są wysyłane na żaden serwer. Dzięki temu możesz bezpiecznie przetwarzać również poufne dokumenty.</p>
+
+    <h2>Najczęstsze pytania</h2>
+    <h3>Jak połączyć kilka plików PDF w jeden?</h3>
+    <p>Wybierz zakładkę „Połącz PDF”, przeciągnij pliki na pole lub kliknij je, aby wybrać z dysku, a następnie kliknij „Przetwarzaj Pliki”. Połączony dokument zostanie pobrany automatycznie.</p>
+    <h3>Dlaczego po odblokowaniu nie mogę zaznaczyć tekstu?</h3>
+    <p>Odblokowanie tworzy nowy dokument ze stronami zapisanymi jako obrazy w wysokiej rozdzielczości. Wygląd pozostaje taki sam, ale tekst nie jest zaznaczalny.</p>
+</article>

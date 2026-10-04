@@ -82,7 +82,7 @@ function updateQR() {
         qr.addData(txt);
         qr.make();
     } catch (e) {
-        render.innerHTML = '<p style="color:var(--danger); align-self:center; text-align:center;">Za dużo danych do zakodowania w kodzie QR.</p>';
+        render.innerHTML = '<p class="qr-error">Za dużo danych do zakodowania w kodzie QR.</p>';
         return;
     }
 
@@ -148,3 +148,4 @@ function downloadQR(t) {
 // Zmiana zakładki typu kodu odświeża podgląd
 document.getElementById('qrTabs').addEventListener('tabchange', updateQR);
 renderQrHist(getQrHist());
+updateQR();
