@@ -3,8 +3,8 @@ title: FlashTools
 url: "https://flashtools-web.github.io"
 lang: pl
 
-# Kod z Google Search Console (metoda "Tag HTML"): usuń "#" na początku linii poniżej i wklej wartość content="..."
-# google_site_verification: "TU_WKLEJ_KOD"
+# Kod weryfikacyjny z Google Search Console (metoda "Tag HTML")
+google_site_verification: "nOIxWEDVdMd7fskhsctxTMLB7LUHU5kojC_TMt-a37o"
 
 # Mapa strony (sitemap.xml) generowana automatycznie przez GitHub Pages
 plugins:
