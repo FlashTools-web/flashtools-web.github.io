@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /terms.html
+sitemap: false
 title: Regulamin serwisu | FlashTools
 description: Zasady korzystania z darmowych narzędzi online FlashTools.
 heading: Regulamin Serwisu

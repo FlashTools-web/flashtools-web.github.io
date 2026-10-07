@@ -6,6 +6,7 @@
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
     {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
 
     <!-- Podgląd linku w social media / komunikatorach -->
